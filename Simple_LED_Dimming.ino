@@ -106,8 +106,8 @@ void fade_LEDs() {
             } else if (white_target_PWM < white_actual_PWM) {
                 white_actual_PWM -= 1;
             }
-            digitalWrite(const_blue_pin, blue_actual_PWM);
-            digitalWrite(const_white_pin, white_actual_PWM);
+            analogWrite(const_blue_pin, blue_actual_PWM);
+            analogWrite(const_white_pin, white_actual_PWM);
             fade_start_millis = millis();
         }
         // 128 is 25% of both lights on full so if the total exceeds this turn fans on
